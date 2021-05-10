@@ -3,7 +3,7 @@ O que eu vou aprender na Trube:
 - Unix
 - Bash
 - Git
-
-HTML
-CSS
-JavaScript
+- React
+- HTML
+- CSS
+- JavaScript
