@@ -1,0 +1,41 @@
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+ul {
+    background: mediumblue;
+}
+
+li {
+    background: moccasin;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: underline red;
+}
+
+.Amarelo {
+    color: yellow;
+}
+
+.Vermelho {
+    color: red;
+}
+
+.Marrom {
+    color: brown;
+}
+
+.cor-fundo {
+    background: mediumslateblue;
+}
