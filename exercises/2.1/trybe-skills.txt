@@ -1,9 +1,0 @@
-O que eu vou aprender na Trube:
-
-- Unix
-- Bash
-- Git
-- React
-- HTML
-- CSS
-- JavaScript
