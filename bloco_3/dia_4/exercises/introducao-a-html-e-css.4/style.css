@@ -3,14 +3,45 @@
     width: 800px;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;   
+}
+
 hr {
     margin-bottom: 30px;
     border: 2px solid;
 }
+.header hr:nth-child(3) {
+    margin-bottom: 10px;
+}
+
 h1 hr {
-    margin-top: 30px;
     margin-bottom: 0;
 }
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 15px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+
+}
+
+nav {
+    margin-bottom: 10px;
+}
+nav ul {
+    list-style: none;
+}
+nav ul li {
+    display: inline;
+    margin-left: 15%;
+}
+
+/* classes de css  */
 .header {
     margin-top: 5%;
     margin-bottom: 1%;
@@ -21,16 +52,17 @@ h1 hr {
 }
 .header span {
     font-size: 38px;
-
 }
 
 .escode {
     display: none;
 }
 
-.text-bg-cinza {
+
+/* cor textos */
+.text-cinza {
     color: #464040;
 }
-.text-bg-red {
+.text-red {
     color: #B82C30;
 }
