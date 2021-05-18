@@ -64,6 +64,24 @@ nav ul li {
     text-transform: uppercase;
 }
 
+table {
+    width: 60%;
+    margin: 0;
+}
+table tr td:nth-child(1){
+    font-weight: bold;
+    width: 40%;
+}
+
+table tr td:nth-child(2):hover{
+    color: #B82C30;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+.infor {
+    font-size: 30px;
+}
 /* cor textos */
 .text-cinza {
     color: #464040;
