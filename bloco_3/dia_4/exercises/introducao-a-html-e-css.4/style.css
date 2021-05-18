@@ -1,31 +1,36 @@
 * {
     margin: 0 auto;
-    padding: 0 auto;
-    border: 0px;
+    width: 800px;
 }
 
-body {
-    background-image: url('/exercises/introducao-a-html-e-css.4/img/fundo-site.jpg');
-    background-size: cover;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #F26359;
+hr {
+    margin-bottom: 30px;
+    border: 2px solid;
 }
+h1 hr {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.header {
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 35px;    
+}
+.header span {
+    font-size: 38px;
 
-h1 {
-    text-align: center;
-    padding: 3%;
 }
 
 .escode {
     display: none;
 }
 
-.header {
-    width: 90%;
-    min-width: 500px;
-    background-color: #2B567D;
-    height: 110px;
-    border-radius: 25px 25px 0 0;
-    opacity: 0.9;
-    
+.text-bg-cinza {
+    color: #464040;
+}
+.text-bg-red {
+    color: #B82C30;
 }
