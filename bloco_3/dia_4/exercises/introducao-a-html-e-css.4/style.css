@@ -1,0 +1,31 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    border: 0px;
+}
+
+body {
+    background-image: url('/exercises/introducao-a-html-e-css.4/img/fundo-site.jpg');
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #F26359;
+}
+
+h1 {
+    text-align: center;
+    padding: 3%;
+}
+
+.escode {
+    display: none;
+}
+
+.header {
+    width: 90%;
+    min-width: 500px;
+    background-color: #2B567D;
+    height: 110px;
+    border-radius: 25px 25px 0 0;
+    opacity: 0.9;
+    
+}
