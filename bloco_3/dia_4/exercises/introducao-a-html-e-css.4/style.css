@@ -6,7 +6,12 @@
 a {
     text-decoration: none;
     font-weight: bold;
-    color: #000;   
+    color: #000;
+}
+
+a:hover {
+    color: #B82C30;
+    text-transform: uppercase;
 }
 
 hr {
@@ -30,15 +35,13 @@ h2 {
 
 }
 
-nav {
-    margin-bottom: 10px;
-}
 nav ul {
     list-style: none;
 }
 nav ul li {
-    display: inline;
-    margin-left: 15%;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
 }
 
 /* classes de css  */
@@ -47,7 +50,6 @@ nav ul li {
     margin-bottom: 1%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
-    text-transform: uppercase;
     line-height: 35px;    
 }
 .header span {
@@ -58,6 +60,9 @@ nav ul li {
     display: none;
 }
 
+.upper {
+    text-transform: uppercase;
+}
 
 /* cor textos */
 .text-cinza {
