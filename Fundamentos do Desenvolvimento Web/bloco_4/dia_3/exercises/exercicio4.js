@@ -1,18 +1,13 @@
+
 let n = 5;
-let saidaTexto = '';
 
-let contado = 0;
-for (let indexUm = 0; indexUm < n; indexUm += 1) {
-
-    for (indexDois = 0; indexDois < n; indexDois += 1) {
-        if (contado === indexUm && contado <= indexDois) {
-            saidaTexto += '*';
-        }
-        saidaTexto += ' ';
+for (var i = 0; i < n; i++) {
+    var str = '';
+    for (var j = 1; j < n - i; j++) {
+        str = str + ' ';
     }
-    contado += 1
-    saidaTexto += '\n'
+    for (var k = 1; k <= (2 * i + 1); k++) {
+        str = str + '*';
+    }
+    console.log(str);
 }
-
-console.log(`n = ${n}\n\n`);
-console.log(saidaTexto);
