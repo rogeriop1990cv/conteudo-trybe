@@ -1,13 +1,17 @@
-
 let n = 5;
+let meio = Math.floor(n / 2);
+let l = 1;
 
-for (var i = 0; i < n; i++) {
-    var str = '';
-    for (var j = 1; j < n - i; j++) {
-        str = str + ' ';
+for (let linha = 0; linha < n; linha++) {
+    if(linha < meio){
+        console.log(''.repeat(meio - 1));
+        continue
     }
-    for (var k = 1; k <= (2 * i + 1); k++) {
-        str = str + '*';
+    console.log(' '.repeat(meio).concat('*'.repeat(l)).concat(' '.repeat(meio)))
+    if (meio > 0) {
+        meio -= 1;
+        l += 2
+    } else {
+        break;
     }
-    console.log(str);
 }
