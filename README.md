@@ -1,6 +1,6 @@
 # Trybe
 
-Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Rogério P. Da Silva](https://github.com/rogeriop1990cv/)_ enquanto estudava na [Trybe](https://www.betrybe.com/).
+Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Rogério P. Da Silva](https://github.com/rogeriop1990cv/)_ enquanto estuda na [Trybe](https://www.betrybe.com/).
 
 
 
