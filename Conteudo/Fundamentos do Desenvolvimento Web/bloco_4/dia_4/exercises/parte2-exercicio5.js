@@ -22,6 +22,6 @@ function numeroRepetido(listaDeNumeros) {
   return r;
 }
 
-let lista = [1, 2, 2, 1, 2]
+let lista = [2, 3, 2, 5, 8, 2, 3]
 console.log(lista);
 console.log(numeroRepetido(lista))

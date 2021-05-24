@@ -1,1 +1,1 @@
-r = numero;
+soma += i;
