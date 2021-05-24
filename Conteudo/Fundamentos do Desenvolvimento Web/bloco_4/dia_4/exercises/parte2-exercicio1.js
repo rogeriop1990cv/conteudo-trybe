@@ -1,15 +1,15 @@
 function verificaPalindrome(text) {
-    let stringRevert = '';
+  let stringRevert = '';
 
-    for (let index=( text.length - 1); index >= 0; index--) {
-        stringRevert += text[index];
-    };
+  for (let index = (text.length - 1); index >= 0; index--) {
+    stringRevert += text[index];
+  };
 
-    if (text.toLowerCase() === stringRevert.toLowerCase()) {
-        return true;
-    }else {
-        return false;
-    }
+  if (text.toLowerCase() === stringRevert.toLowerCase()) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log(verificaPalindrome('desenvolvimento'))
