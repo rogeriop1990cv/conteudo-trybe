@@ -13,8 +13,8 @@ let info1 = {
 };
 
 for (key in info) {
-  if (info[key] === 'Sim') {
-    console.log(`${info[key]} // ${info1[key]}`);
+  if (info[key] === info1[key]) {
+    console.log(`Ambos Recorrentes`);
   } else {
     console.log(`${info[key]} e ${info1[key]}`);
   }
