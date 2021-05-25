@@ -19,9 +19,13 @@ function numeroRepetido(listaDeNumeros) {
     }
   }
 
-  return r;
+  for(key in numerosR){
+    if(numerosR[key] === maior){
+      console.log(key ,numerosR[key],);
+    }
+  }
+
 }
 
-let lista = [2, 3, 2, 5, 8, 2, 3]
-console.log(lista);
-console.log(numeroRepetido(lista))
+let lista = [2, 1, 2, 5, 8, 2, 1, 1, 10, 10, 10]
+numeroRepetido(lista)
