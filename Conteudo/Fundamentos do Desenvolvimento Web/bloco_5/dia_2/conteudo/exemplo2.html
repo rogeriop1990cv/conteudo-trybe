@@ -35,11 +35,12 @@ el.appendChild(novoFilho)
 
 // Crie um filho para primeiroFilhoDoFilho .
 el = document.querySelector('#primeiroFilhoDoFilho')
+novoFilho.id = 'primeiroFilhoDoFilho'
 el.appendChild(novoFilho)
 
-// A partir desse filho criado, acesse terceiroFilho .
- 
-
+// A partir desse filho criado, acesse terceiroFilho.
+el = document.querySelector('#primeiroFilhoDoFilho').parentElement.nextElementSibling
+console.log(el);
 
   </script>
 </body>
