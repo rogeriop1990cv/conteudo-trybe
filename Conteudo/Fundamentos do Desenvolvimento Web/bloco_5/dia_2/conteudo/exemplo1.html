@@ -23,7 +23,10 @@
   <script>
     let el = document.querySelector('#elementoOndeVoceEsta');
     console.log(el)
-    document.querySelector('#elementoOndeVoceEsta').parentElement.style.color = 'red';
+    el.parentElement.style.color = 'red';
+    el.firstElementChild.innerText = 'Olá mudno!'
+    el = document.querySelector('#pai').firstElementChild
+    console.log(ell)
   </script>
 </body>
 </html>
