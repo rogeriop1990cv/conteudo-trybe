@@ -118,8 +118,14 @@
             el.appendChild(h3)
         }
         // Bonus
-        // Adicione a classe title na tag h1 criada;
-        document.querySelector('h1').className = "title"
+        // 1 - Adicione a classe title na tag h1 criada;
+        document.querySelector('h1').className = "title";
+
+        // Adicione a classe description nas 3 tags h3 criadas;
+        let listH3 = document.querySelectorAll('h3');
+        for(let h of listH3){
+            h.className = 'description'
+        }
 
     </script>
   </body>
