@@ -21,15 +21,15 @@ function createDaysOfTheMonth() {
 
   for (let day of dezDaysList) {
     const li = document.createElement('li');
-    li.className = 'day'
+    li.className = 'day '
     li.innerText = day;
     if ([24, 25, 31].includes(day)) {
-      li.className = 'day holiday'
+      li.className += 'holiday'
       li.innerText = day;
     }
 
     if ([4, 11, 18, 25].includes(day)) {
-      li.className = 'day friday'
+      li.className += ' friday'
       li.innerText = day;
     }
 
@@ -49,3 +49,19 @@ function createBntFeriado(string) {
 
 }
 createBntFeriado('Feriados');
+
+// Exercício 3:
+function efeitoBnt(element) {
+  const daysFediado = document.getElementsByClassName('day holiday')
+  for (let el of daysFediado) {
+    if(el.style.backgroundColor){
+      el.style.backgroundColor = ''
+    } else {
+      el.style.backgroundColor = 'white'
+    }
+    console.log();
+  }
+}
+
+const bnt = document.querySelector('#btn-holiday');
+bnt.addEventListener('click', efeitoBnt)
