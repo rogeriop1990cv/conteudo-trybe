@@ -15,27 +15,37 @@ createDaysOfTheWeek();
 
 // Exercício 1:
 
-function createDaysOfTheMonth(){
+function createDaysOfTheMonth() {
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];;
   const daysListItem = document.querySelector('#days')
 
-  for(let day of dezDaysList){
+  for (let day of dezDaysList) {
     const li = document.createElement('li');
     li.className = 'day'
     li.innerText = day;
-    if([24, 25, 31].includes(day)){
+    if ([24, 25, 31].includes(day)) {
       li.className = 'day holiday'
       li.innerText = day;
     }
-    
-    if([4, 11, 18, 25].includes(day)){
+
+    if ([4, 11, 18, 25].includes(day)) {
       li.className = 'day friday'
       li.innerText = day;
     }
 
     daysListItem.appendChild(li)
-    console.log(li);
   }
 }
 
 createDaysOfTheMonth()
+
+// Exercício 2
+function createBntFeriado(string) {
+  const el = document.querySelector('.buttons-container');
+  const bnt = document.createElement('button');
+  bnt.innerText = string;
+  bnt.id = "btn-holiday";
+  el.appendChild(bnt)
+
+}
+createBntFeriado('Feriados');
