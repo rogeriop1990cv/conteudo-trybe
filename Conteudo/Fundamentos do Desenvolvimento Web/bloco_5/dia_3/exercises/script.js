@@ -116,3 +116,13 @@ function myTasks(string){
 }
 myTasks('Projeto')
 
+// Exercício 8:
+function legTasks(stringCor){
+  const el = document.querySelector('.my-tasks');
+  const legendaTask = document.createElement('div');
+  legendaTask.style.backgroundColor = stringCor;
+  legendaTask.className = 'task';
+  el.appendChild(legendaTask)
+}
+
+legTasks('green')
