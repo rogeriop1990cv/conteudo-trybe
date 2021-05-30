@@ -54,7 +54,7 @@ createBntFeriado('Feriados');
 function effectBntHoliday(element) {
   const daysFediado = document.getElementsByClassName('day holiday')
   for (let el of daysFediado) {
-    if(el.style.backgroundColor){
+    if (el.style.backgroundColor) {
       el.style.backgroundColor = ''
     } else {
       el.style.backgroundColor = 'white'
@@ -81,7 +81,7 @@ sextaFeira("Sexta-Feira")
 function effectBtnFriday(element) {
   const daysFediado = document.getElementsByClassName('day  friday')
   for (let el of daysFediado) {
-    if(el.innerHTML === 'Sexta-feira'){
+    if (el.innerHTML === 'Sexta-feira') {
       let umDiaDepoisDeHoje = Number(el.nextSibling.innerText) // Peguei um dia depois e converti para numero.
       el.innerHTML = umDiaDepoisDeHoje - 1 // Aqui eu faço menos 1 pra saber qual era o dia atual.
     } else {
@@ -95,7 +95,7 @@ bntFriday.addEventListener('click', effectBtnFriday);
 
 // Exercício 6:
 function effectZoomMauseOver(el) {
-  if(el.target.className.startsWith('day')){ // Se minha classe começa com day, retrona true.
+  if (el.target.className.startsWith('day')) { // Se minha classe começa com day, retrona true.
     el.target.style.transform = 'scale(1.5)';
   }
 }
@@ -107,7 +107,7 @@ document.body.addEventListener('mouseover', effectZoomMauseOver) //  Aplico o ef
 document.body.addEventListener('mouseout', effectZoomMauseNormal) //  Aplico o efeito nesse elemento.
 
 // Exercício 7:
-function myTasks(string){
+function myTasks(string) {
   const el = document.querySelector('.my-tasks'); // Nesse caso usei querySelector porque me retorna o primeiro elemento e não uma lista como o getelementsByClassName.
   const createSpan = document.createElement('span');
   createSpan.innerText = string;
@@ -117,7 +117,7 @@ function myTasks(string){
 myTasks('Projeto')
 
 // Exercício 8:
-function legTasks(stringCor){
+function legTasks(stringCor) {
   const el = document.querySelector('.my-tasks');
   const legendaTask = document.createElement('div');
   legendaTask.style.backgroundColor = stringCor;
@@ -128,13 +128,30 @@ function legTasks(stringCor){
 legTasks('green')
 
 // Exercício 9:
-function addClassSelected(el){
-  if(el.target.className === 'task '){
+function addClassSelected(el) {
+  if (el.target.className === 'task ') {
     el.target.className += 'selected '
-  }else if (el.target.className === 'task selected '){
+  } else if (el.target.className === 'task selected ') {
     el.target.className = 'task '
   }
 
 }
 
 document.body.addEventListener('click', addClassSelected)
+
+// Exercício 10:
+function addCorDay(el) {
+  // Pega a cor do elemento que tive a class.
+  const corLegDay = document.querySelector('.task').style.backgroundColor || document.querySelector('.task.selected ').style.backgroundColor;
+
+  if (document.querySelector('.task.selected ')) {
+    if (el.target.style.color === corLegDay) {
+      el.target.style.color = '';
+    } else if (el.target.className.startsWith('day')) {
+      el.target.style.color = corLegDay;
+    }
+  }
+
+}
+
+document.body.addEventListener('click', addCorDay)
