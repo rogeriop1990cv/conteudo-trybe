@@ -131,9 +131,10 @@ legTasks('green')
 function addClassSelected(el){
   if(el.target.className === 'task '){
     el.target.className += 'selected '
-  }else{
+  }else if (el.target.className === 'task selected '){
     el.target.className = 'task '
   }
+
 }
 
 document.body.addEventListener('click', addClassSelected)
