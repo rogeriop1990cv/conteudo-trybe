@@ -121,8 +121,19 @@ function legTasks(stringCor){
   const el = document.querySelector('.my-tasks');
   const legendaTask = document.createElement('div');
   legendaTask.style.backgroundColor = stringCor;
-  legendaTask.className = 'task';
+  legendaTask.className = 'task ';
   el.appendChild(legendaTask)
 }
 
 legTasks('green')
+
+// Exercício 9:
+function addClassSelected(el){
+  if(el.target.className === 'task '){
+    el.target.className += 'selected '
+  }else{
+    el.target.className = 'task '
+  }
+}
+
+document.body.addEventListener('click', addClassSelected)
