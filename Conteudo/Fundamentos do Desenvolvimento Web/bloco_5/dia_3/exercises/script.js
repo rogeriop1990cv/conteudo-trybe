@@ -59,7 +59,6 @@ function effectBntHoliday(element) {
     } else {
       el.style.backgroundColor = 'white'
     }
-    console.log();
   }
 }
 
@@ -87,7 +86,6 @@ function effectBtnFriday(element) {
     } else {
       el.innerHTML = 'Sexta-feira'
     }
-    console.log();
   }
 }
 const bntFriday = document.getElementById('btn-friday');
@@ -111,7 +109,6 @@ function myTasks(string) {
   const el = document.querySelector('.my-tasks'); // Nesse caso usei querySelector porque me retorna o primeiro elemento e não uma lista como o getelementsByClassName.
   const createSpan = document.createElement('span');
   createSpan.innerText = string;
-  console.log(createSpan);
   el.appendChild(createSpan)
 }
 myTasks('Projeto')
@@ -155,3 +152,29 @@ function addCorDay(el) {
 }
 
 document.body.addEventListener('click', addCorDay)
+
+// Bônus:
+function addTeks() {
+  const textInput = document.getElementById('task-input');
+  const listTask = document.querySelector('.task-list')
+  const list = document.createElement('li')
+
+  if (textInput.value === '') {
+    alert('Valor invalido, digite um compromisso.')
+  } else {
+    list.innerText = textInput.value
+    listTask.appendChild(list)
+
+  }
+}
+
+const bntAddTask = document.getElementById('btn-add')
+bntAddTask.addEventListener('click', addTeks)
+
+const textInput = document.getElementById('task-input')
+// A função () => { conteudo } verificar o tipo da tecla, se for entre ela chama a addteks()
+textInput.addEventListener('keydown', (event) => {
+  if(event.key === 'Enter'){
+    addTeks()
+  }
+})
