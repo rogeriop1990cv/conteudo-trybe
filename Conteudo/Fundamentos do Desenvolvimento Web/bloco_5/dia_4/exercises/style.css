@@ -1,0 +1,17 @@
+.container{
+    text-align: left;
+    width: 100%;
+}
+
+.leitor {
+    margin: 0 auto;
+    width: 70%; /* Valor da Largura */
+}
+ul {
+    text-align: center;
+width: 100%;
+}
+
+li {
+    display: inline-block
+}

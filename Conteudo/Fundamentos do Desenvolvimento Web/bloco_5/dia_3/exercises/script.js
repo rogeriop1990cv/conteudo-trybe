@@ -97,12 +97,14 @@ function effectZoomMauseOver(el) {
     el.target.style.transform = 'scale(1.5)';
   }
 }
+
 function effectZoomMauseNormal(el) {
-  el.target.style.transform = '';
+  el.target.style.transform = null;
 }
-const elLiDay = document.getElementsByClassName('day') // Busco todas as classe com nome day dentro.
-document.body.addEventListener('mouseover', effectZoomMauseOver) //  Aplico o efeito nesse elemento.
-document.body.addEventListener('mouseout', effectZoomMauseNormal) //  Aplico o efeito nesse elemento.
+
+const ulDays = document.getElementById('days') // Busco todas as classe com nome day dentro.
+ulDays.addEventListener('mouseover', effectZoomMauseOver) //  Aplico o efeito nesse elemento.
+ulDays.addEventListener('mouseout', effectZoomMauseNormal) //  Aplico o efeito nesse elemento.
 
 // Exercício 7:
 function myTasks(string) {
