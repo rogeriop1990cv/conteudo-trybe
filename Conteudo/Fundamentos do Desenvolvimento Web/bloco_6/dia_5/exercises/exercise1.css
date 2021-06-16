@@ -45,11 +45,16 @@ figure {
 }
 
 @media screen and (min-width: 1588px){
+  * {
+    max-width: 1600px;
+    min-width: 400px;
+  }
+
   body {
     background: yellow;
     font-size: 28px;
     margin: 10%px;
-    max-width: 1600px;
+    
   }
   h1 {
     font-size: 48px;
