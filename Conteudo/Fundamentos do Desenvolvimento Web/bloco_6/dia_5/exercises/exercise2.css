@@ -149,3 +149,53 @@ footer {
     margin: 25px;
   }
 }
+
+@media print {
+  body {}
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header p {
+    text-align: center;
+    margin: auto;
+    font-size: 48px;
+    margin-top: 20px
+  }
+
+  nav {
+    width: 25%;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  aside {
+    margin: 25px;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-decoration: underline;
+  }
+
+  .main-content p {
+    margin: 25px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+}
