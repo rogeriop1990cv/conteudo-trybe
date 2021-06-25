@@ -1,0 +1,201 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+
+/* 320 x 480 */
+@media screen and (max-width: 480px) {
+  header {
+    background: black;
+    color: white;
+    margin: 0;
+  }
+
+  header p {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  nav {
+    display: none;
+  }
+
+  aside {
+    margin: 5px
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: black;
+    color: white;
+    height: 50px;
+    margin: 1px;
+  }
+
+  .main-content p {
+    font-size: 18px;
+    margin: 15px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside-one,
+  .aside-two {
+    display: none;
+  }
+}
+
+/* 800x600 */
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 18px;
+  }
+
+  header {
+    display: flex;
+    background: black;
+    color: white;
+    justify-content: center;
+  }
+
+  header p {
+    margin: auto 15px;
+    font-size: 28px;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  aside {
+    margin: 15px;
+  }
+
+  .main-content p {
+    font-size: 18px;
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {}
+
+  header {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header p {
+    text-align: center;
+    margin: auto;
+    font-size: 48px;
+    margin-top: 20px
+  }
+
+  nav {
+    width: 25%;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  aside {
+    margin: 25px;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    height: 100px;
+  }
+
+  .main-content p {
+    margin: 25px;
+  }
+}
+
+@media print {
+  body {}
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header p {
+    text-align: center;
+    margin: auto;
+    font-size: 48px;
+    margin-top: 20px
+  }
+
+  nav {
+    width: 25%;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  aside {
+    margin: 25px;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-decoration: underline;
+  }
+
+  .main-content p {
+    margin: 25px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+}

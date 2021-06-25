@@ -1,0 +1,66 @@
+body {
+  font-size: 18px;
+  margin: 5%;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 25px;
+}
+
+figure {
+  margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background: gray;
+    font-size: 24px;
+    margin: 10%px
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  img {}
+
+  figure {
+    display: inline-block;
+    max-width: 47%;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1588px){
+  * {
+    max-width: 1600px;
+    min-width: 400px;
+  }
+
+  body {
+    background: yellow;
+    font-size: 28px;
+    margin: 10%px;
+    
+  }
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+}
