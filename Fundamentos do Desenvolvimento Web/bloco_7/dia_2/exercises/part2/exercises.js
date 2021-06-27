@@ -19,11 +19,14 @@ const lesson3 = {
 };
 
 // Requisito 01.
-const addChaveValor = (obj, text, value) => { 
-  Object.assign(obj, {[text]: value})
+const addChaveValor = (obj, text, value) => {
+  Object.assign(obj, { [text]: value })
 };
 
-addChaveValor(lesson2,'turno', 'manhã' );
+addChaveValor(lesson2, 'turno', 'manhã');
 
 // Requisito 02.
 const listKeys = obj => Object.keys(obj);
+
+// Requisito 03.
+const viewlentghObject = obj => Object.keys(obj).length;
