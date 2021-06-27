@@ -42,12 +42,15 @@ const customerInfo = (order) => {
 
 customerInfo(order);
 
-
 const orderModifier = (order) => {
-    // Adicione abaixo as informações necessárias.
+    // Retorna uma lista, lista tem o metodo .join() que faz ela vira uma string.
+    let sabores = Object.keys(order.order.pizza);
+
+    let drink = order.order.drinks.coke.type;
+    let valor = order.payment.total;
+
+    console.log(`Olá ${order.order.delivery.deliveryPerson}, o total do seu pedido de ${sabores.join(', ')} e ${drink} é R$ ${valor.toFixed(2)}."`);
 
 }
 
 orderModifier(order);
-
-
