@@ -18,3 +18,11 @@ const lesson3 = {
   turno: 'noite',
 };
 
+// Requisito 01.
+const addChaveValor = (obj, text, value) => { 
+  Object.assign(obj, {[text]: value})
+}
+
+addChaveValor(lesson2,'turno', 'manhã' )
+
+
