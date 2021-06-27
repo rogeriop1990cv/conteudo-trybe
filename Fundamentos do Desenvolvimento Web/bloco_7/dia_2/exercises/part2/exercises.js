@@ -30,3 +30,8 @@ const listKeys = obj => Object.keys(obj);
 
 // Requisito 03.
 const viewlentghObject = obj => Object.keys(obj).length;
+
+// Requisito 04.
+const listValues = obj => Object.values(obj);
+
+console.log(listValues(lesson2))
