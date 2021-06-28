@@ -40,3 +40,12 @@ Object.assign(allLessons, {['lesson1']: lesson1})
 Object.assign(allLessons, {['lesson2']: lesson2})
 Object.assign(allLessons, {['lesson3']: lesson3})
 
+// Requisito 06.
+const fullNumberStudent = (obj) => {
+  let totalStudent = 0;
+  for(item in obj){
+    totalStudent += obj[item].numeroEstudantes
+  };
+
+  return totalStudent
+}
