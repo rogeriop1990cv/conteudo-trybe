@@ -36,16 +36,19 @@ const listValues = obj => Object.values(obj);
 
 // Requisito 05.
 const allLessons = {};
-Object.assign(allLessons, {['lesson1']: lesson1})
-Object.assign(allLessons, {['lesson2']: lesson2})
-Object.assign(allLessons, {['lesson3']: lesson3})
+Object.assign(allLessons, { ['lesson1']: lesson1 })
+Object.assign(allLessons, { ['lesson2']: lesson2 })
+Object.assign(allLessons, { ['lesson3']: lesson3 })
 
 // Requisito 06.
 const fullNumberStudent = (obj) => {
   let totalStudent = 0;
-  for(item in obj){
+  for (item in obj) {
     totalStudent += obj[item].numeroEstudantes
   };
 
   return totalStudent
 }
+
+// Requisito 07.
+const getValueByNumber = (obj, position) => (Object.values(obj)[position])
