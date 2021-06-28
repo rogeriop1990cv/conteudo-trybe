@@ -71,9 +71,28 @@ const verifyPair = (obj, key, value) => {
 const attendedMathClass = (obj) => {
   let total = 0;
   for (item in obj) {
-    if(obj[item].materia === 'Matemática'){
+    if (obj[item].materia === 'Matemática') {
       total += obj[item].numeroEstudantes;
-    } 
+    }
   }
   return total
+}
+
+// Bônus 1.
+const createReport = (obj, teacherName) => {
+  let total = 0
+  const listMateria = []
+
+  for (let item in obj) {
+    if (obj[item].professor === teacherName) {
+      listMateria.push(obj[item].materia);
+      total += obj[item].numeroEstudantes;
+    }
+  }
+
+  return {
+    professor: teacherName,
+    aulas: listMateria,
+    estudantes: total,
+  }
 }
