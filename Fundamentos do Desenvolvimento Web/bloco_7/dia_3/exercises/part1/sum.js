@@ -14,4 +14,5 @@ assert.strictEqual(sum(0, 0), 0);
 
 // https://www.geeksforgeeks.org/nodejs-assert-throws-function/
 assert.throws(() => {sum(4, '1')});
-assert.throws(() => {sum(4, '1')}, /^Error: parameters must be numbers$/ );
+assert.throws(() => {sum(4, '1')}, /^Error: parameters must be numbers$/);
+
