@@ -52,3 +52,17 @@ const fullNumberStudent = (obj) => {
 
 // Requisito 07.
 const getValueByNumber = (obj, position) => (Object.values(obj)[position])
+
+// Requisito 08:
+const verifyPair = (obj, key, value) => {
+  const keyValue = `${key},${value}`
+  const listKeysValue = Object.entries(obj)
+
+  for (let item of listKeysValue) {
+    if (item.toString() === keyValue) {
+      return true
+    } 
+  }
+
+  return false
+}
