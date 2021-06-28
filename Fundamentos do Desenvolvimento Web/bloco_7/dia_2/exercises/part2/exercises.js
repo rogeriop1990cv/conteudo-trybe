@@ -61,8 +61,19 @@ const verifyPair = (obj, key, value) => {
   for (let item of listKeysValue) {
     if (item.toString() === keyValue) {
       return true
-    } 
+    }
   }
 
   return false
+}
+
+// Bônus 1.
+const attendedMathClass = (obj) => {
+  let total = 0;
+  for (item in obj) {
+    if(obj[item].materia === 'Matemática'){
+      total += obj[item].numeroEstudantes;
+    } 
+  }
+  return total
 }
