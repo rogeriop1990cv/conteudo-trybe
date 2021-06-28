@@ -1,3 +1,4 @@
+// 1 - Dada uma matriz, transforme em um array.
 const assert = require('assert');
 
 const arrays = [
