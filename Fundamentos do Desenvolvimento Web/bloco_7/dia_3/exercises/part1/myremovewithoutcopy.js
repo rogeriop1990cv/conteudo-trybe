@@ -12,8 +12,8 @@ function myRemoveWithoutCopy(arr, item) {
   return arr;
 }
 
-let lista = [1, 2, 3, 4]
-assert.deepStrictEqual(myRemoveWithoutCopy(lista, 3), lista)
-assert.notDeepStrictEqual(myRemoveWithoutCopy(lista, 3), [1, 2, 3, 4])
-assert.notDeepStrictEqual(myRemoveWithoutCopy(lista), [1, 2, 3, 4])
-assert.notDeepStrictEqual(myRemoveWithoutCopy(lista, 5), [1, 2, 3, 4])
+let lista = [1, 2, 3, 4];
+assert.deepStrictEqual(myRemoveWithoutCopy(lista, 3), lista);
+assert.notDeepStrictEqual(myRemoveWithoutCopy(lista, 3), [1, 2, 3, 4]);
+assert.notDeepStrictEqual(myRemoveWithoutCopy(lista), [1, 2, 3, 4]);
+assert.notDeepStrictEqual(myRemoveWithoutCopy(lista, 5), [1, 2, 3, 4]);
