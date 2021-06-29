@@ -1,7 +1,6 @@
 const assert = require('assert');
 
-const books = [
-  {
+const books = [{
     id: 1,
     name: 'As Crônicas de Gelo e Fogo',
     genre: 'Fantasia',
@@ -65,7 +64,7 @@ const books = [
 
 
 // 2 - Crie uma string com os nomes de todas as pessoas autoras.
-const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+const expectedResult1 = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
 function reduceNames() {
   const listAutores = books.reduce((acomulador, objeto) => {
@@ -74,20 +73,37 @@ function reduceNames() {
   return listAutores.replace(/, $/, '.')
 }
 
-assert.strictEqual(reduceNames(), expectedResult);
+assert.strictEqual(reduceNames(), expectedResult1);
 
-// // 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
-// const expectedResult = 43;
+// 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
+const expectedResult2 = 43;
 
 function averageAge() {
+  const ageList = books.reduce((acomulador, objeto) => {
+    acomulador.push(objeto.releaseYear - objeto.author.birthYear);
+    return acomulador;
+  }, []);
+
+  const sum = ageList.reduce((soma, num) => soma += num)
+  return sum / ageList.length
+}
+
+assert.strictEqual(averageAge(), expectedResult2);
+
+// 4 - Encontre o livro com o maior nome.
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
   // escreva seu código aqui
 }
 
-// assert.strictEqual(averageAge(), expectedResult);
-
-// // 4 - Encontre o livro com o maior nome.
-// function longestNamedBook() {
-//   // escreva seu código aqui
-// }
-
-// assert.deepStrictEqual(longestNamedBook(), expectedResult);
+assert.deepStrictEqual(longestNamedBook(), expectedResult);
