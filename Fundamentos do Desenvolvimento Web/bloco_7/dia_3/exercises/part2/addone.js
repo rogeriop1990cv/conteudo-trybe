@@ -1,5 +1,12 @@
 const assert = require('assert');
-// escreva a função addOne aqui
+
+function addOne(list){
+  const newlist = []
+  for(num of list){
+    newlist.push(num += 1);
+  };
+  return newlist
+}
 
 const myArray = [31, 57, 12, 5];
 const unchanged = [31, 57, 12, 5];
