@@ -1,5 +1,11 @@
 const assert = require('assert');
-// escreva a função wordLengths aqui
+function wordLengths(listWord){
+  const lengthsWord = []
+  for(word of listWord){
+    lengthsWord.push(word.length)
+  }
+  return lengthsWord
+}
 
 const words = ['sun', 'potato', 'roundabout', 'pizza'];
 const expected = [3, 6, 10, 5];
