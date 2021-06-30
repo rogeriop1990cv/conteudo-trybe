@@ -1,11 +1,15 @@
-const greetPeople = (people) => {
-  let greeting = 'Hello ';
+const assert = require('assert')
 
-  for (const person in people) {
-    greeting += people[person];
+const greetPeople = (people) => {
+  let greeting = 'Hello';
+
+  for (let person in people) {
+    people[person] = `${greeting} ${people[person]}`
   }
-  return greeting;
+  return people;
 };
 
 const parameter = ['Irina', 'Ashleigh', 'Elsa'];
 const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
+
+assert.deepStrictEqual(greetPeople(parameter), result);
