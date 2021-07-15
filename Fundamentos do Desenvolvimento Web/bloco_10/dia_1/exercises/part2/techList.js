@@ -1,11 +1,8 @@
 function techList(listaDeTecnologias, nome) {
-  let listaDeTech = [];
-  if (listaDeTecnologias.length <= 0) {
-    return 'Vazio!';
-  }
+  if (!listaDeTecnologias.length) return 'Vazio!';
 
-  for (let tecnologia of listaDeTecnologias.sort()) {
-    listaDeTech.push({ name: nome, tech: tecnologia });
-  }
-  return listaDeTech;
+  // refatoração.
+  return listaDeTecnologias.sort().map(tecnologia => ({ name: nome, tech: tecnologia}));
+
 }
+module.exports = techList;
