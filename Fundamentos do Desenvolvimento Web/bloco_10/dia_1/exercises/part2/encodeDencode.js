@@ -36,3 +36,8 @@ function decode(texto) {
   }
   return saida;
 }
+
+module.exports = {
+  encode,
+  decode
+}
