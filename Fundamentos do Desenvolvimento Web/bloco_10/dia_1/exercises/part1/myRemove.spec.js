@@ -23,11 +23,4 @@ describe('A função myRemove(arr, item) recebe um array arr e retorna uma cópi
     const array = [1, 2, 3, 4];
     expect(myRemove(array, 5)).toEqual([1, 2, 3, 4]);
   })
-
-
  })
-
-
-
-
-
