@@ -38,7 +38,4 @@ const professionalBoard = [
   },
 ];
 
-// Pesquisa
-const searchEmployee = (id, detail) => {
-  // Implemente seu código aqui
-};
+module.exports = professionalBoard;
