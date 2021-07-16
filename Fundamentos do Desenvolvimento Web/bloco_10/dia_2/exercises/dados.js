@@ -21,10 +21,3 @@ module.exports = {
   getUserName
 }
 
-describe('Testa a função getUserName', () => {
-  it('Testa se o usuario é encontrado.', (done) => {
-    expect(getUserName(4)).toMatch('Mark')
-    done();
-  })
-  // it('Testa se o usuario é encontrado.', () => {})
-})
