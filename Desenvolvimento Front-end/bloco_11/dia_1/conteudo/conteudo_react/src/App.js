@@ -1,5 +1,4 @@
 import './App.css';
-import HelloWorld from './helloWorld';
 import Component from './Component'
 
 
