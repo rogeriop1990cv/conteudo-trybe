@@ -17,10 +17,11 @@ class Pokedex extends React.Component {
     };
     
     render() {
+        this.pokemonProps = this.props.pokemons[this.state.valor];
         return (
             <div>
                 <div className="pokedex">
-                    { <Pokemon key={this.props.pokemons[this.state.valor].id} pokemon={this.props.pokemons[this.state.valor]} /> }
+                    { <Pokemon key={this.pokemonProps.id} pokemon={this.pokemonProps} /> }
                 </div>
                 <div>
                     <button onClick={this.mudaValor}>Proximo Pokemon</button>
