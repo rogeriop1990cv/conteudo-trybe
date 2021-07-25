@@ -1,9 +1,8 @@
-import Pokemon from './components/Pokemon'
-import pokemons from './data';
+import Pokedex from './components/Pokedex'
 
 function App() {
   return (
-    <Pokemon pokemon={pokemons[0]}/>
+    <Pokedex />
   );
 }
 
