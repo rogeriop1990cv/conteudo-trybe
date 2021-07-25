@@ -1,8 +1,9 @@
+import Pokemon from './components/Pokemon'
+import pokemons from './data';
+
 function App() {
   return (
-    <div>
-      <h1>Olá Pokedex</h1>
-    </div>
+    <Pokemon pokemon={pokemons[5]}/>
   );
 }
 
