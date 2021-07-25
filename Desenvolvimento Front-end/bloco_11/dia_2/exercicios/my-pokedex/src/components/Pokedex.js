@@ -1,11 +1,11 @@
 import React from 'react';
-import Pokemon from './Pokemon'
 import pokemons from '../data';
+import Pokemon from './Pokemon'
 
 export default class Pokedex extends React.Component {
   render() {
     return (
-      <Pokemon pokemon={pokemons[7]} />
+       pokemons.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />)
     )
   }
 }
