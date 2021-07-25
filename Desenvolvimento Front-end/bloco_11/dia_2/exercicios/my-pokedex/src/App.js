@@ -3,7 +3,7 @@ import pokemons from './data';
 
 function App() {
   return (
-    <Pokemon pokemon={pokemons[5]}/>
+    <Pokemon pokemon={pokemons[0]}/>
   );
 }
 
