@@ -9,7 +9,6 @@ export default class Pokedex extends React.Component {
         <section className="pokedex">
           {pokemons.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />)}
         </section>
-     
     )
   }
 }
