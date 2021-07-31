@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+// App.js
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      characters: [],
+    };
+  }
+
+   fetchCharacters = async () => {
+    const response = await fetch('https://rickandmortyapi.com/api/character')
+    const data = await response.json();
+    this.setState({ characters: data.results })
+  }
+  render() {
+    const { characters } = this.state;
+    return (
+      <div className="App">
+        <h1>
+          Ricky and Morty Characters:
+        </h1>
+        <div className="body">
+          {characters.map(({ name, image }) => {
+            return (
+              <div className="container" key={name}>
+                <h3>{name}</h3>
+                <img src={image} alt={name} />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  componentDidMount(){
+    this.fetchCharacters()
+  }
 }
 
 export default App;
