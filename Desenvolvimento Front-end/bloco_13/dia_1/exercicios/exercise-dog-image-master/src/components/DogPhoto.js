@@ -17,45 +17,77 @@ class DogPhoto extends React.Component {
     this.fetchImg()
   };
 
-  handleChangeInputNameButtonh = () => {
-    console.log('teste');
+  handleChangeInputNameButtonh = (value) => {
+    this.setState(({image, nameDogImage}) => {
+      return { 
+        nomeDog: value,
+        nameDogImage: [...nameDogImage, {nome: value, url: image}]
+       };
+    }, () => this.saveStorage())
   };
 
-
+  saveStorage = () => {
+    const { nameDogImage } = this.state;
+    const prevLocalStore = JSON.parse(localStorage.getItem('nameDogImage')) || []
+    const last = [...nameDogImage].pop() // deleta o ultimo e retorna ele.
+    // const last  = [...nameDogImage].pop() // Pega o a ultima url de uma lista.
+    localStorage.setItem('nameDogImage', JSON.stringify([...prevLocalStore, last]))
+  }
+  
   fetchImg = async () => {
-    // const { imagemAtual } = this.props;
-    this.setState((loading) => ({loading: false}))
+    this.setState(() => ({ loading: false }))
     const request = await fetch('https://dog.ceo/api/breeds/image/random');
     const data = await request.json();
-    this.setState(({image, loading}) => {
+    this.setState(() => {
       return { image: data.message, loading: true };
     })
   };
 
+  breed = () => {
+    const { image } = this.state;
+    const breed = image.split('/')[4]
+    alert(`A raça do doguinho é ${breed}`)
+  }
+
+
+  
   ImaTag = () => {
     return (
-    <img src={this.state.image}
-      alt="Imagem de cachorro"
-      className="image-photo-dog"
-      style={{ width: "200px" }} />
+      <div>
+        <img src={this.state.image}
+          alt="Imagem de cachorro"
+          className="image-photo-dog"
+          style={{ width: "200px" }} onLoad={this.breed}/>
+      </div>
     )
   }
 
 
-componentDidMount() {
-  this.fetchImg();
-}
+  componentDidMount() {
+    const prevLocalStore = JSON.parse(localStorage.getItem('nameDogImage'))
+    const { url } = [...prevLocalStore].pop()
+    if(!prevLocalStore){
+      return this.fetchImg();
+    }
+    this.setState(()=> ({image: url}))
+  }
 
-render() {
-  const { loading } = this.state;
-  return (
-    <section>
-      {loading ? this.ImaTag() : <p>Loading...</p>}<br />
-      <ButtonImg onClick={this.handleChangeButtonImg} />
-      <InputNameButton />
-    </section>
-  );
-}
+  
+
+  shouldComponentUpdate(_, { image }){
+    if(image.includes('terrier')) return false;
+    return true;
+  }
+  render() {
+    const { loading } = this.state;
+    return (
+      <section>
+        {loading ? this.ImaTag() : <p>Loading...</p>}<br />
+        <ButtonImg onClick={this.handleChangeButtonImg} /><br />
+        <InputNameButton onClick={this.handleChangeInputNameButtonh} />
+      </section>
+    );
+  }
 }
 
 export default DogPhoto;
