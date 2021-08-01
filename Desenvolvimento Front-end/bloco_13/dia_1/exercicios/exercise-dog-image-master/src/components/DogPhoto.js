@@ -66,10 +66,10 @@ class DogPhoto extends React.Component {
 
   componentDidMount() {
     const prevLocalStore = JSON.parse(localStorage.getItem('nameDogImage'))
-    const { url } = [...prevLocalStore].pop()
     if(!prevLocalStore){
       return this.fetchImg();
     }
+    const { url } = [...prevLocalStore].pop()
     this.setState(()=> ({image: url}))
   }
 
