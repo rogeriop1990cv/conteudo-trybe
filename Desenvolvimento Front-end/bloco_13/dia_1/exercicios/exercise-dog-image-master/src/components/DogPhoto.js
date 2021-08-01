@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonImg from './ButtonImg';
 import InputNameButton from './InputNameButton';
+import './DogPhoto.css'
 
 class DogPhoto extends React.Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class DogPhoto extends React.Component {
         <img src={this.state.image}
           alt="Imagem de cachorro"
           className="image-photo-dog"
-          style={{ width: "200px" }} onLoad={this.breed}/>
+          onLoad={this.breed}/>
       </div>
     )
   }
