@@ -1,17 +1,24 @@
-import { render, screen, waitFor } from '@testing-library/react';
+// App.test.js
+import React from 'react';
+import { render } from '@testing-library/react'
 import App from './App';
 
-test('Verifica que, quando recebo uma piada, mosto ela na tela.', async () =>{
+afterEach(() => jest.clearAllMocks());
+it('fetch joke', async () => {
   const joke = {
-    id: '7h3oGtr0fxs',
-    joke: 'Whiteboardsare ... remarkable.',
+    id: '7h3oGtrOfxc',
+    joke: 'Whiteboards ... are remarkable.',
     status: 200,
   };
 
-  global.fetch = jest.fn().mockResolvedValue({
-    json: jest.fn().mockResolvedValue(joke)
+  jest.spyOn(global, "fetch").mockResolvedValue({
+    json: jest.fn().mockResolvedValue(joke),
   });
-
-  render (<App />)
-  await waitFor(() => screen.getByText('Whiteboardsare ... remarkable.'))
-})
+  const { findByText } = render(<App />);
+  await findByText('Whiteboards ... are remarkable.');
+  expect(global.fetch).toBeCalledTimes(1);
+  expect(global.fetch).toBeCalledWith(
+    'https://icanhazdadjoke.com/',
+    {"headers": {"Accept": "application/json"}}
+  );
+});
