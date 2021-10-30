@@ -1,9 +1,3 @@
--- Usando o CASE na tabela sakila.film exiba o título a classificação indicativa （ rating ） e uma coluna extra que vamos chamar de 'público-alvo' em que classificaremos o filme de acordo com AS seguintes siglas:
--- G: "Livre para todos";
--- PG: "Não recomendado para menores de 10 anos";
--- PG-13: "Não recomendado para menores de 13 anos";
--- R: "Não recomendado para menores de 17 anos";
--- Se não cair em nenhuma das classificações anteriores: "Proibido para menores de idade".
 SELECT
   title,
   rating,
