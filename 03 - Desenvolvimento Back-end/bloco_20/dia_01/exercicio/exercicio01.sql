@@ -1,1 +1,4 @@
-SELECT MAX(SALARY) FROM hr.employees;
+SELECT
+  MAX(SALARY)
+FROM
+  hr.employees;
