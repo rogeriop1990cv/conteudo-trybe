@@ -1,5 +1,4 @@
 SELECT
-  
   `customer`.first_name,
   `customer`.email,
   `customer`.address_id,
@@ -7,12 +6,7 @@ SELECT
   `address`.district
 FROM
   sakila.customer AS `customer`
-INNER JOIN
-  sakila.address AS `address`
-ON
-  `address`.address_id = `customer`.customer_id
+  INNER JOIN sakila.address AS `address` ON `address`.address_id = `customer`.address_id
 WHERE
-  CONCAT(`customer`.first_name, ' ', `customer`.last_name) LIKE "rene%" AND
   `address`.district = 'California'
-  
-;
+  AND `customer`.first_name LIKE '%rene%';
