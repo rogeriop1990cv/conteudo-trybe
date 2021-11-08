@@ -1,7 +1,7 @@
 SELECT
-  CONCAT(`actor`.first_name, ' ', `actor`.last_name),
-  `film`.actor_id,
+  `actor`.actor_id,
+  `actor`.first_name,
   `film`.film_id
 FROM
-  sakila.film_actor AS `film`
-  INNER JOIN sakila.actor AS `actor` ON `actor`.actor_id = `film`.actor_id;
+  sakila.actor AS `actor`
+  INNER JOIN sakila.film_actor AS `film` ON `actor`.actor_id = `film`.actor_id;
