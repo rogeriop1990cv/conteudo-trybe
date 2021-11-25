@@ -1,4 +1,4 @@
-mkdir -p bloco_19/dia_{1..4}/conteudo/.gitkeep bloco_19/dia_{1..4}/exercicio/.gitkeep  && echo "## Docker Utilizando Containers." > bloco_19/README.md
+mkdir -p bloco_19/dia_{1..4}/conteudo/ bloco_19/dia_{1..4}/exercicio/  && echo "## Docker Utilizando Containers." > bloco_19/README.md
 mkdir -p bloco_20/dia_{1..5}/conteudo bloco_20/dia_{1..5}/exercicio && echo "## Introdução à SQL." > bloco_20/README.md
 mkdir -p bloco_21/dia_{1..4}/conteudo bloco_21/dia_{1..4}/exercicio && echo "## Funções SQL, JOINs e Normalização." > bloco_21/README.md
 mkdir -p bloco_22/dia_{1..6}/conteudo bloco_22/dia_{1..6}/exercicio && echo "## Introdução ao desenvolvimento Web com NodeJS." > bloco_22/README.md
