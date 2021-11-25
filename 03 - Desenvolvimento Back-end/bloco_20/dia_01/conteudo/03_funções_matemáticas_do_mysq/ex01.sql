@@ -1,2 +1,0 @@
-
-SELECT ROUND(15 + RAND() * 5);

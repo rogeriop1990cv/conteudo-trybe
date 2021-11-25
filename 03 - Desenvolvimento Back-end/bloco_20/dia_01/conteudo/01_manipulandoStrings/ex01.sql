@@ -1,2 +1,0 @@
-SELECT
-  ucase('trybe');
