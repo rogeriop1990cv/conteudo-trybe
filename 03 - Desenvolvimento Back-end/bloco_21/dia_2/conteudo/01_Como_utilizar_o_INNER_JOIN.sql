@@ -47,16 +47,41 @@ ORDER BY
 LIMIT
   100;
 
-
-
-
-
+-- 05
 SELECT
-  *
+  first_name,
+  COUNT(address_id)
 FROM
-  sakila.customer;
+  sakila.customer
+WHERE
+  active = 1
+GROUP BY
+  customer_id
+ORDER BY
+  first_name DESC;
 
+-- 06
 SELECT
-  *
+    stf.first_name,
+    stf.last_name,
+    AVG(pay.amount) AS `Média de pagamento`
 FROM
-  address;
+    sakila.staff AS stf
+INNER JOIN
+    sakila.payment pay ON stf.staff_id = pay.staff_id
+WHERE
+    YEAR(pay.payment_date) = 2006
+GROUP BY stf.staff_id;
+
+-- 07
+SELECT
+    stf.first_name,
+    stf.last_name,
+    AVG(pay.amount) AS `Média de pagamento`
+FROM
+    sakila.staff AS stf
+INNER JOIN
+    sakila.payment pay ON stf.staff_id = pay.staff_id
+WHERE
+    YEAR(pay.payment_date) = 2006
+GROUP BY stf.staff_id;
