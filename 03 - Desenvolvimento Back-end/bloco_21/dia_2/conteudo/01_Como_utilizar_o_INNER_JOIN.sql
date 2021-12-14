@@ -29,6 +29,28 @@ ORDER BY
 LIMIT
   100;
 
+-- 04
+SELECT
+  `customer`.customer_id,
+  `customer`.first_name AS `name`,
+  `customer`.email,
+  `address`.address_id,
+  `address`.address,
+  `address`.district
+FROM
+  sakila.customer AS `customer`
+  INNER JOIN sakila.address AS `address` ON `address`.address_id = `customer`.address_id
+WHERE
+  `address`.district LIKE 'California' AND `customer`.first_name LIKE '%rene%'
+ORDER BY
+  `name` DESC
+LIMIT
+  100;
+
+
+
+
+
 SELECT
   *
 FROM
