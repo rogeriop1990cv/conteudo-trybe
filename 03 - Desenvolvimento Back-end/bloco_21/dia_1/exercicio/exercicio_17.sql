@@ -1,0 +1,7 @@
+SELECT
+  LAST_NAME,
+  HIRE_DATE
+FROM
+  employees
+ WHERE
+  HIRE_DATE LIKE '1987-07-%%';
