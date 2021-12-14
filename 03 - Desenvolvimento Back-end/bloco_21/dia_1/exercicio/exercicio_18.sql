@@ -1,0 +1,7 @@
+SELECT
+  FIRST_NAME,
+  LAST_NAME,
+  DATEDIFF(END_DATE, START_DATE)
+FROM
+  employees
+  INNER JOIN job_history ON employees.EMPLOYEE_ID = job_history.EMPLOYEE_ID;
