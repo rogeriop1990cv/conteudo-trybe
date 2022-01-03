@@ -1,5 +1,4 @@
 services:
-
   db:
     image: mysql:5.7
     container_name: same-mysql
@@ -8,6 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - mysql-vol:/var/lib/mysql
+      - .:/pc-host
     ports:
       - '3306:3306'
 
