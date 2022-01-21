@@ -4,6 +4,7 @@ const express = require('express');
 
 
 const Author = require('./models/Author');
+const User = require('./models/User');
 
 const app = express();
 
@@ -33,6 +34,14 @@ app.post('/authors', async (req, res) => {
   await Author.create(first_name, middle_name, last_name)
   res.status(201).json({ message: 'Author criado com sucesso!!' });
 })
+
+// Rotas Users.
+app.post('/user', async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+  await User.create({ firstName, lastName, password, email });
+  res.status(201).json({ message: "Novo usuário criando com sucesso." })
+})
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
