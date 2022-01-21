@@ -3,7 +3,7 @@
 const express = require('express');
 
 
-const Author = require('./models/Author');
+const Author = require('./services/Authors')
 
 const app = express();
 
@@ -28,11 +28,10 @@ app.get('/authors/:id', async (req, res) => {
 
 app.post('/authors', async (req, res) => {
   const { first_name, middle_name, last_name } = req.body;
-
-  if (!Author.isValid(first_name, middle_name, last_name)) return res.status(400).json({ message: 'Dados inválidos!!!' });
-  await Author.create(first_name, middle_name, last_name)
-  res.status(201).json({ message: 'Author criado com sucesso!!' });
-})
+  const author = await Author.createAuthor(first_name, middle_name, last_name);
+  if (!author) return res.status(400).json({ message: 'Dados inválidos' });
+  res.status(201).json(author);
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
