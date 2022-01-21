@@ -40,8 +40,8 @@ app.post('/user', async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
     User.isValid(firstName, lastName, password, email);
-    await User.create({ firstName, lastName, password, email });
-    res.status(201).json({ message: "Novo usuário criando com sucesso." })
+    const result = await User.create({ firstName, lastName, password, email });
+    res.status(201).json(result)
   } catch (error) {
     res.status(400).json(error)
   }
