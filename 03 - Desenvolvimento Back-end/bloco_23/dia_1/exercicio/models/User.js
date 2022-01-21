@@ -1,12 +1,31 @@
 const connection = require('./connection');
 
 const isValid = (firstName, lastName, password, email) => {
-  if (!firstName || typeof firstName !== 'string') return { firstName: false };
-  if (!lastName || typeof lastName !== 'string') return { lastName: false };
-  if (!password || typeof lastName !== 'number') return { password: false };
-  if (password.length <= 6) return { password: "Tamanho" };
-  if (!email || typeof lastName !== 'string') return { email: false };
-  return true;
+  if (!firstName || typeof firstName !== 'string') throw {
+    "error": true,
+    "message": "O campo 'Nome' não pode se vazio"
+  };
+
+  if (!lastName || typeof lastName !== 'string') throw {
+    "error": true,
+    "message": "O campo 'Sobrenome' não pode se vazio"
+  };
+
+  if (!password || typeof password !== 'string') throw {
+    "error": true,
+    "message": "O campo 'Password' não pode se vazio"
+  };
+
+  if (!email || typeof email !== 'string') throw {
+    "error": true,
+    "message": "O campo 'Email' não pode se vazio"
+  };
+
+  if (password.length <= 6) throw {
+    "error": true,
+    "message": "O campo 'Password' deve ter pelo menos 6 caracteres"
+  };
+
 }
 
 const create = async (userData) => {

@@ -37,9 +37,14 @@ app.post('/authors', async (req, res) => {
 
 // Rotas Users.
 app.post('/user', async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
-  await User.create({ firstName, lastName, password, email });
-  res.status(201).json({ message: "Novo usuário criando com sucesso." })
+  try {
+    const { firstName, lastName, email, password } = req.body;
+    User.isValid(firstName, lastName, password, email);
+    await User.create({ firstName, lastName, password, email });
+    res.status(201).json({ message: "Novo usuário criando com sucesso." })
+  } catch (error) {
+    res.status(400).json(error)
+  }
 })
 
 const PORT = process.env.PORT || 3000;
