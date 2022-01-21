@@ -36,6 +36,9 @@ app.post('/authors', async (req, res) => {
 })
 
 // Rotas Users.
+app.get('/user', async (req, res) => {
+  res.status(200).json([])
+})
 app.post('/user', async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
