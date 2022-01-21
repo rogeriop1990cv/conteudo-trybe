@@ -29,8 +29,13 @@ app.get('/authors/:id', async (req, res) => {
 })
 
 app.put('/user/:id', async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
-  res.status(200).json({ firstName, lastName, email, password })
+  const { firstName, lastName, password, email } = req.body;
+  try {
+    User.isValid(firstName, lastName, password, email);
+    res.status(200).json({ firstName, lastName, email, password })
+  } catch (error) {
+    res.status(400).json(error)
+  }
 })
 
 app.post('/authors', async (req, res) => {
