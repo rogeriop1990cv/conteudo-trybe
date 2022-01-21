@@ -65,9 +65,25 @@ const getById = async (id) => {
   );
   return user;
 }
+
+const update = async (userDate) => {
+  const { firstName, lastName, password, email, id } = userDate;
+  await connection.execute(
+    `
+    UPDATE model_example.user
+    SET
+      first_name=?,
+      last_name=?,
+      password=?,
+      email=?
+    WHERE id=?;
+    `, [firstName, lastName, password, email, id]
+  )
+}
 module.exports = {
   create,
   getAllUsers,
   getById,
+  update,
   isValid
 }

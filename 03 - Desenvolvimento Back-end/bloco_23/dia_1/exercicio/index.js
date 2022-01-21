@@ -29,10 +29,20 @@ app.get('/authors/:id', async (req, res) => {
 })
 
 app.put('/user/:id', async (req, res) => {
+  const { id } = req.params;
   const { firstName, lastName, password, email } = req.body;
   try {
+    const userFound = await User.getById(id);
+
+    if (!userFound.length) return res.status(404).json({
+      "error": true,
+      "message": "Usuário não encontrado"
+    });
+
     User.isValid(firstName, lastName, password, email);
-    res.status(200).json({ firstName, lastName, email, password })
+    await User.update({ id, firstName, lastName, password, email });
+
+    res.status(200).json({ id, firstName, lastName, email, password })
   } catch (error) {
     res.status(400).json(error)
   }
