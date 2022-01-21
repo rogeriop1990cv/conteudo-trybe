@@ -44,7 +44,30 @@ const create = async (userData) => {
   }
 }
 
+const getAllUsers = async () => {
+  try {
+    const [users] = await connection.execute(
+      'SELECT id, first_name, last_name, email FROM model_example.user;',
+    );
+    return users;
+  } catch (error) {
+    console.error(error)
+  }
+};
+
+const getById = async (id) => {
+  const [user] = await connection.execute(
+    `
+    SELECT id, first_name, last_name, email 
+    FROM model_example.user
+    WHERE id=?;
+    `, [id]
+  );
+  return user;
+}
 module.exports = {
   create,
+  getAllUsers,
+  getById,
   isValid
 }
