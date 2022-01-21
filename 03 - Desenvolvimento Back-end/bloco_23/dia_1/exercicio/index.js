@@ -28,6 +28,11 @@ app.get('/authors/:id', async (req, res) => {
   res.status(200).json(author);
 })
 
+app.put('/user/:id', async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+  res.status(200).json({ firstName, lastName, email, password })
+})
+
 app.post('/authors', async (req, res) => {
   const { first_name, middle_name, last_name } = req.body;
 
@@ -68,6 +73,7 @@ app.post('/user', async (req, res) => {
     res.status(400).json(error)
   }
 })
+
 
 
 const PORT = process.env.PORT || 3000;
