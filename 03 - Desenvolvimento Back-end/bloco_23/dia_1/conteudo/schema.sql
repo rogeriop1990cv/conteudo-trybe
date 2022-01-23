@@ -5,8 +5,6 @@ CREATE TABLE authors (
   first_name VARCHAR(30) NOT NULL,
   middle_name VARCHAR(30),
   last_name VARCHAR(30) NOT NULL,
-  birthday DATE,
-  nationality VARCHAR(100),
   PRIMARY KEY(id)
 );
 INSERT INTO
