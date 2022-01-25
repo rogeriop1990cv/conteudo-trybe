@@ -7,14 +7,14 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   const products = await ProductModel.getAll();
 
-  res.send(products);
+  res.status(200).json({ products });
 });
 
-// Buscando um produto por Id.
+// Buscando um produto pela ID.
 router.get('/:id', async (req, res, next) => {
   const product = await ProductModel.getById(req.params.id);
 
-  res.send(product);
+  res.status(200).json({ product });
 });
 
 // Criando um Novo Produto.
@@ -23,14 +23,14 @@ router.post('/', async (req, res) => {
 
   const newProduct = await ProductModel.add(name, brand);
 
-  res.send(newProduct);
+  res.status(201).json({ products });
 });
 
-// Deletando um produto por Id.
+// Deletando um produto pela ID.
 router.delete('/:id', async (req, res) => {
   const products = await ProductModel.exclude(req.params.id);
 
-  res.send(products);
+  res.status(200).json({ products });
 });
 
 // Atualizando um Produto pela ID.
@@ -39,7 +39,7 @@ router.put('/:id', async (req, res) => {
 
   const products = await ProductModel.update(req.params.id, name, brand);
 
-  res.send(products);
+  res.status(200).json({ products });
 });
 
 module.exports = router;
