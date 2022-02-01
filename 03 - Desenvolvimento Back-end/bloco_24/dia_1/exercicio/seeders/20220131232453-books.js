@@ -6,9 +6,7 @@ module.exports = {
       {
         title: "Estoria sem Fim",
         author: "Sei la",
-        pageQuantity: 150,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP')
+        pageQuantity: 150
       }
     ])
   },
