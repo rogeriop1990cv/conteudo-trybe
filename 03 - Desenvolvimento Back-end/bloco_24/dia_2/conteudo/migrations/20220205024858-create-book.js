@@ -1,30 +1,33 @@
+// cole esse código dentro do arquivo da migration "books"
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Employees', {
-      id: {
+    await queryInterface.createTable('Books', {
+      bookId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
+        field: 'book_id',
       },
-      firstName: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING,
-        field: 'first_name',
       },
-      lastName: {
-        allowNull: false,
-        type: Sequelize.STRING,
-        field: 'last_name',
-      },
-      age: {
+      releaseYear: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        field: 'release_year',
+      },
+      numberPages: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        field: 'number_pages',
       },
     });
   },
 
   down: async (queryInterface, _Sequelize) => {
-    return queryInterface.dropTable('Employees');
+    await queryInterface.dropTable('Books');
   },
 };
